@@ -15,13 +15,18 @@ function computerPlay (){
 
 function playRound(playerSelection, computerSelection) {
   if(playerSelection == computerSelection){
-    return ("It's a tie!");
+    console.log("It's a tie!");
+    return 
   } else if((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")){
-    return ("You Lose! " + computerSelection + " beats " + playerSelection);
+    console.log("You Lose! " + computerSelection + " beats " + playerSelection)
+    return 
   } else {
-    return ("You Win! " + playerSelection + " beats " + computerSelection);
+    console.log("You Win! " + playerSelection + " beats " + computerSelection)
+    return 
   }
 }
+
+
 
 const playerSelection = promptPlayer();
 console.log('You chose ' + playerSelection);
