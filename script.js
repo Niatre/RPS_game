@@ -1,4 +1,6 @@
-let playerSelection = prompt ('Do you choose rock, paper or scissors ? ');
+function promptPlayer(){
+ return prompt("Do you choose rock, paper or scissors ? ")
+}
 
 function computerPlay (){
     let computerSelection = Math.floor(Math.random()*3);
@@ -21,8 +23,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-
-
+const playerSelection = promptPlayer();
 console.log('You chose ' + playerSelection);
 const computerSelection = computerPlay();
 console.log('The computer choose ' + computerSelection);
