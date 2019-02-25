@@ -52,3 +52,7 @@ console.log('You chose ' + playerSelection);
 const computerSelection = computerPlay();
 console.log('The computer choose ' + computerSelection);
 console.log(game());
+console.log(`Computers score: ${computerScore}`);
+console.log(`Your score: ${playerScore}`);
+console.log(`Rounds played: ${round}`);
+console.log(`Rounds tied: ${ties}`);
