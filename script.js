@@ -1,3 +1,8 @@
+let computerScore = 0;
+let playerScore = 0;
+let round = 0;
+let ties = 0;
+
 function promptPlayer(){
  return prompt("Do you choose rock, paper or scissors ? ")
 }
@@ -16,13 +21,13 @@ function computerPlay (){
 function playRound(playerSelection, computerSelection) {
   if(playerSelection === computerSelection){
     console.log("It's a tie!");
-    return
+    return ++ties , ++round
   } else if((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")){
     console.log("You Lose! " + computerSelection + " beats " + playerSelection)
-    return 
+    return ++computerScore , ++round
   } else {
     console.log("You Win! " + playerSelection + " beats " + computerSelection)
-    return 
+    return ++playerScore , ++round
   }
 }
 
