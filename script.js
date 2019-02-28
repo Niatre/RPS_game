@@ -1,8 +1,3 @@
-let computerScore = 0;
-let playerScore = 0;
-let round = 0;
-let ties = 0;
-
 function promptPlayer(){
  return prompt("Do you choose rock, paper or scissors ? ")
 }
@@ -21,38 +16,30 @@ function computerPlay (){
 function playRound(playerSelection, computerSelection) {
   if(playerSelection === computerSelection){
     console.log("It's a tie!");
-    return ++ties , ++round
+    return 0
   } else if((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")){
     console.log("You Lose! " + computerSelection + " beats " + playerSelection)
-    return ++computerScore , ++round
+    return -1
   } else {
     console.log("You Win! " + playerSelection + " beats " + computerSelection)
-    return ++playerScore , ++round
+    return 1
   }
 }
 
 function game(){
   let score = 0;
- for(i = 0; i<6; i++){
+ for(i = 0; i<5; i++){
   let playerSelection = promptPlayer()
-            score += playRound(playerSelection, computerPlay())
+             score += playRound(playerSelection, computerPlay())
 }
-console.log("The game has ended")
-  if(ties == 0){
-      console.log("It was a tie")
-  } else if(computerScore < playerScore){
-      console.log("You lost. Your score was: " + playerScore)
+   if(score < 0){
+      console.log("You lost. Your score was: " + score)
   } else {
-      console.log("You won! Your score was: " + computerScore)
+      console.log("You won! Your score was: " + score)
   }
+  return 'The Game has ended'
 }
 
 const playerSelection = promptPlayer();
-console.log('You chose ' + playerSelection);
 const computerSelection = computerPlay();
-console.log('The computer choose ' + computerSelection);
 console.log(game());
-console.log(`Computers score: ${computerScore}`);
-console.log(`Your score: ${playerScore}`);
-console.log(`Rounds played: ${round}`);
-console.log(`Rounds tied: ${ties}`);
